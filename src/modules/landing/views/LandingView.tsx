@@ -9,6 +9,8 @@ import { Field } from '@/modules/fields/types';
 import { Card } from '@/components/ui/Card';
 import { TestimonialsCarousel } from '@/components/ui/TestimonialsCarousel';
 
+import { SoccerBackgroundAnimation } from '../components/SoccerBackgroundAnimation';
+
 export const LandingView = () => {
     const [fields, setFields] = useState<Field[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -31,16 +33,16 @@ export const LandingView = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden relative">
             {/* Background effects */}
-            <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
-            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-500/20 rounded-full blur-3xl pointer-events-none animate-pulse" />
-            <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-green-500/15 rounded-full blur-3xl pointer-events-none animate-pulse delay-1000" />
 
             <div className="relative z-10">
                 {/* Hero Section */}
-                <section className="container mx-auto px-4 py-24 md:py-32">
-                    <div className="max-w-4xl mx-auto text-center">
+                <section className="container mx-auto px-4 py-24 md:py-32 relative overflow-hidden">
+
+                    <SoccerBackgroundAnimation />
+
+                    <div className="max-w-4xl mx-auto text-center relative z-10">
                         <motion.div
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
